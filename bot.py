@@ -4,23 +4,67 @@ from telegram.ext import ApplicationBuilder, CommandHandler, CallbackQueryHandle
 TOKEN = "8714743719:AAHyTwRGTknZVjjFmNv95B1fh2S4G4X-dXw"
 SAHABOT_FILE_ID = "BQACAgQAAxkBAAMuaa8KgOceAweFTPwxUfktTc4XFPcAAukcAALzNnlR44QOsTOI9pY6BA"
 
+KURULUM = """📲 *Kurulum Adımları*
+
+*1\. APK'yı İndir*
+Az önce gönderilen APK dosyasını telefonuna indir\.
+
+*2\. Kuruluma İzin Ver*
+Telefon "Bilinmeyen kaynak" uyarısı verirse:
+→ Ayarlar → Güvenlik → Bilinmeyen kaynaklara izin ver ✅
+
+*3\. APK'yı Kur*
+İndirilen dosyaya tıkla → Yükle → Aç
+
+*4\. Giriş Yap*
+Sana verilen kullanıcı adı ve şifreyi gir\.
+
+*5\. Başlat*
+▶ Başlat butonuna bas, uygulama çalışmaya başlar\.
+"""
+
+NASIL_CALISIR = """⚙️ *Sahabot\+ Nasıl Çalışır?*
+
+🔄 *İş Havuzu Taraması*
+Uygulama sürekli olarak Trendkargo iş havuzunu kontrol eder\.
+
+✅ *Otomatik Kabul*
+Uygun iş bulduğunda saniyeler içinde otomatik kabul eder\.
+
+⏱ *Bekleme Süresi*
+Her kabulden sonra 10 saniye bekler, sonra tekrar tarar\.
+
+🛑 *Durdurma*
+İstediğin zaman ■ Durdur butonuna basarak durdurabilirsin\.
+
+📵 *UYARI*
+Start-Stop Bbutonlarını sadece işlem havuzunda kullanın işlemlere geçtiğinizde start basılı olmasın!!!\.
+"""
+
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    keyboard = [[InlineKeyboardButton("📥 APK İndir", callback_data="apk_indir")]]
+    keyboard = [[InlineKeyboardButton("📥 Güncel APK'yı İndir", callback_data="apk_indir")]]
     reply_markup = InlineKeyboardMarkup(keyboard)
     await update.message.reply_text(
-        "👋 Sahabot+'a hoş geldin!\n\nGüncel APK'yı indirmek için butona tıkla.",
+        "👋 *Sahabot\+'a Hoş Geldin\!*\n\nGüncel APK'yı indirmek için aşağıdaki butona tıkla\.",
+        parse_mode="MarkdownV2",
         reply_markup=reply_markup
     )
 
 async def handle_button(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     await query.answer()
+
     if query.data == "apk_indir":
-        await query.message.reply_text("⏳ Gönderiliyor...")
+        # Önce APK gönder
         await query.message.reply_document(
             SAHABOT_FILE_ID,
-            caption="✅ Sahabot+ Güncel Sürüm"
+            caption="✅ *Sahabot\+ Güncel Sürüm*",
+            parse_mode="MarkdownV2"
         )
+        # Sonra kurulum adımları
+        await query.message.reply_text(KURULUM, parse_mode="MarkdownV2")
+        # Sonra nasıl çalışır
+        await query.message.reply_text(NASIL_CALISIR, parse_mode="MarkdownV2")
 
 async def get_file_id(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if update.message.document:
