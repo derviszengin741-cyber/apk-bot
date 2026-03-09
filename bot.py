@@ -6,35 +6,35 @@ SAHABOT_FILE_ID = "BQACAgQAAxkBAAMuaa8KgOceAweFTPwxUfktTc4XFPcAAukcAALzNnlR44QOs
 
 KURULUM = """📲 Kurulum Adımları
 
-1. APK'yı İndir
+APK'yı İndir
 Az önce gönderilen APK dosyasını telefonuna indir.
 
-2. Kuruluma İzin Ver
+Kuruluma İzin Ver
 Telefon "Bilinmeyen kaynak" uyarısı verirse:
 → Ayarlar → Güvenlik → Bilinmeyen kaynaklara izin ver ✅
 
-3. APK'yı Kur
+APK'yı Kur
 İndirilen dosyaya tıkla → Yükle → Aç
 
-4. Giriş Yap
+Giriş Yap
 Sana verilen kullanıcı adı ve şifreyi gir.
 
-5. Başlat
-▶ Başlat butonuna bas, uygulama çalışmaya başlar."""
+Başlat
+Aç butonuna bas, uygulama çalışmaya başlar."""
 
 NASIL_CALISIR = """⚙️ Sahabot+ Nasıl Çalışır?
 
-🔄 İş Havuzu Taraması
+İş Havuzu Taraması
 Uygulama sürekli olarak Trendkargo iş havuzunu kontrol eder.
 
-✅ Otomatik Kabul
+Otomatik Kabul
 Uygun iş bulduğunda saniyeler içinde otomatik kabul eder.
 
-⏱ Bekleme Süresi
+Bekleme Süresi
 Her kabulden sonra 10 saniye bekler, sonra tekrar tarar.
 
-🛑 Durdurma
-İstediğin zaman ■ Durdur butonuna basarak durdurabilirsin.
+Durdurma
+İstediğin zaman Durdur butonuna basarak durdurabilirsin.
 
 ⚠️ UYARI
 Start/Stop butonlarını sadece işlem havuzunda kullanın. İşlemlere geçtiğinizde Start basılı olmasın!"""
