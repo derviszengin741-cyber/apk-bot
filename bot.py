@@ -2,7 +2,7 @@ from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ApplicationBuilder, CommandHandler, CallbackQueryHandler, MessageHandler, filters, ContextTypes
 
 TOKEN = "8714743719:AAHyTwRGTknZVjjFmNv95B1fh2S4G4X-dXw"
-SAHABOT_FILE_ID = "BQACAgQAAxkBAAMuaa8KgOceAweFTPwxUfktTc4XFPcAAukcAALzNnlR44QOsTOI9pY6BA"
+SAHABOT_FILE_ID = "BQACAgQAAxkBAAODabDH8kkrxvvK6HAz8g1Fuclj5iQAAkAdAALzNoFRHPe4BkwNyx86BA"
 
 KURULUM = """📲 Kurulum Adımları
 
