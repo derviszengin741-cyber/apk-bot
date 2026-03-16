@@ -43,7 +43,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     keyboard = [[InlineKeyboardButton("📥 Güncel APK'yı İndir", callback_data="apk_indir")]]
     reply_markup = InlineKeyboardMarkup(keyboard)
     await update.message.reply_text(
-        "👋 Sahabot+'a Hoş Geldin!\n\nGüncel APK'yı indirmek için aşağıdaki butona tıkla.",
+        "👋 Sahabot+'a Hoş Geldin! Problem var ise yazınız @diyojen5 \n\nGüncel APK'yı indirmek için aşağıdaki butona tıkla.",
         reply_markup=reply_markup
     )
 
